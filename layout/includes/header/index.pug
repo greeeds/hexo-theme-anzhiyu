@@ -3,12 +3,13 @@ if !theme.disable_top_img && page.top_img !== false
     - var top_img = page.top_img || page.cover || page.randomcover
   else if is_page()
     - var top_img = page.top_img || theme.default_top_img
-    - var home_index_img = top_img !== false ? top_img || theme.index_img : false
+    - var home_index_img = top_img !== false ? top_img || theme.index_img|| theme.default_top_img : false
   else if is_home()
     - var top_img = theme.index_img !== false ? theme.index_img || theme.default_top_img : false
     - var home_index_img = theme.index_img !== false ? theme.index_img || theme.default_top_img : false
   else
     - var top_img = page.top_img || theme.default_top_img
+    - var home_index_img = top_img !== false ? top_img || theme.index_img|| theme.default_top_img : false
 
   if top_img !== false
     - var imgSource = top_img && top_img.indexOf('/') !== -1 ? url_for(top_img) : top_img
