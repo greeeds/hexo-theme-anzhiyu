@@ -3,6 +3,7 @@ if !theme.disable_top_img && page.top_img !== false
     - var top_img = page.top_img || page.cover || page.randomcover
   else if is_page()
     - var top_img = page.top_img || theme.default_top_img
+    - var home_index_img = top_img !== false ? top_img || theme.index_img : false
   else if is_home()
     - var top_img = theme.index_img !== false ? theme.index_img || theme.default_top_img : false
     - var home_index_img = theme.index_img !== false ? theme.index_img || theme.default_top_img : false
@@ -42,7 +43,7 @@ header#page-header(class=`${isHomeClass}` style=home_index_img_bg)
         #post-top-cover
           img#post-top-bg(class='nolazyload' src=bg_img)
 
-    else if is_home() 
+    else if is_home()
       #site-info
         h1#site-title=site_title
         if theme.subtitle.enable
